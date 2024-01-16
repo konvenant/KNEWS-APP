@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/breakingNewsFragment"
+        android:name="com.example.knews.ui.fragment.BreakingNewsFragment"
+        android:label="BreakingNewsFragment" >
+        <action
+            android:id="@+id/action_breakingNewsFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_breakingNewsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_breakingNewsFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_breakingNewsFragment_self"
+            app:destination="@id/breakingNewsFragment" />
+        <argument
+            android:name="userDetails"
+            app:argType="com.example.knews.models.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNewsFragment"
+        android:name="com.example.knews.ui.fragment.SavedNewsFragment"
+        android:label="SavedNewsFragment" >
+        <action
+            android:id="@+id/action_savedNewsFragment_to_articleFragment"
+            app:destination="@id/articleFragment"  app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchNewsFragment"
+        android:name="com.example.knews.ui.fragment.SearchNewsFragment"
+        android:label="SearchNewsFragment" >
+        <action
+            android:id="@+id/action_searchNewsFragment_to_articleFragment"
+            app:destination="@id/articleFragment"  app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.knews.ui.fragment.ArticleFragment"
+        android:label="ArticleFragment"  app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right">
+        <argument
+            android:name="article"
+            app:argType="com.example.knews.models.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.knews.ui.fragment.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_breakingNewsFragment"
+            app:destination="@id/breakingNewsFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_choiceFragment"
+            app:destination="@id/choiceFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_completeSignUpFragment"
+            app:destination="@id/completeSignUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choiceFragment"
+        android:name="com.example.knews.ui.fragment.ChoiceFragment"
+        android:label="ChoiceFragment" >
+        <action
+            android:id="@+id/action_choiceFragment_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_choiceFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.knews.ui.fragment.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_verifyEmailFragment"
+            app:destination="@id/verifyEmailFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_completeSignUpFragment"
+            app:destination="@id/completeSignUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_breakingNewsFragment"
+            app:destination="@id/breakingNewsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUp"
+            app:destination="@id/signUp"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.knews.ui.fragment.SignUp"
+        android:label="SignUp" >
+        <action
+            android:id="@+id/action_signUp_to_verifyEmailFragment"
+            app:destination="@id/verifyEmailFragment"
+            app:popUpTo="@id/signUp"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUp_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/signUp"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.knews.ui.fragment.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_verifyForgotPasswordTokenFragment"
+            app:destination="@id/verifyForgotPasswordTokenFragment"
+            app:popUpTo="@id/forgotPasswordFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/forgotPasswordFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyForgotPasswordTokenFragment"
+        android:name="com.example.knews.ui.fragment.VerifyForgotPasswordTokenFragment"
+        android:label="VerifyForgotPasswordTokenFragment" >
+        <action
+            android:id="@+id/action_verifyForgotPasswordTokenFragment_to_updatePasswordFragment"
+            app:destination="@id/updatePasswordFragment"
+            app:popUpTo="@id/verifyForgotPasswordTokenFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="user"
+            app:argType="com.example.knews.models.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyEmailFragment"
+        android:name="com.example.knews.ui.fragment.VerifyEmailFragment"
+        android:label="VerifyEmailFragment" >
+        <action
+            android:id="@+id/action_verifyEmailFragment_to_completeSignUpFragment"
+            app:destination="@id/completeSignUpFragment" />
+        <argument
+            android:name="email"
+            app:argType="com.example.knews.models.Email" />
+        <action
+            android:id="@+id/action_verifyEmailFragment_to_completeSignUpFragment2"
+            app:destination="@id/completeSignUpFragment"
+            app:popUpTo="@id/verifyEmailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePasswordFragment"
+        android:name="com.example.knews.ui.fragment.UpdatePasswordFragment"
+        android:label="UpdatePasswordFragment" >
+        <action
+            android:id="@+id/action_updatePasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/updatePasswordFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="user"
+            app:argType="com.example.knews.models.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeSignUpFragment"
+        android:name="com.example.knews.ui.fragment.CompleteSignUpFragment"
+        android:label="CompleteSignUpFragment" >
+        <action
+            android:id="@+id/action_completeSignUpFragment_to_breakingNewsFragment"
+            app:destination="@id/breakingNewsFragment"
+            app:popUpTo="@id/completeSignUpFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="email"
+            app:argType="com.example.knews.models.Email" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateUserFragment2"
+        android:name="com.example.knews.ui.fragment.UpdateUserFragment"
+        android:label="UpdateUserFragment" >
+        <action
+            android:id="@+id/action_updateUserFragment2_to_updateUserPasswordFragment"
+            app:destination="@id/updateUserPasswordFragment" />
+        <action
+            android:id="@+id/action_updateUserFragment2_to_accountDetailsFragment"
+            app:destination="@id/accountDetailsFragment"
+            app:popUpTo="@id/updateUserFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.knews.ui.fragment.NotificationFragment"
+        android:label="NotificationFragment" >
+        <argument
+            android:name="email"
+            app:argType="com.example.knews.models.Email" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.knews.ui.fragment.AccountFragment"
+        android:label="AccountFragment" >
+        <action
+            android:id="@+id/action_accountFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_accountDetailsFragment"
+            app:destination="@id/accountDetailsFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_accountFragment_self"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountDetailsFragment"
+        android:name="com.example.knews.ui.fragment.AccountDetailsFragment"
+        android:label="AccountDetailsFragment" >
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_updateUserFragment2"
+            app:destination="@id/updateUserFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.knews.ui.fragment.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/settingsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateUserPasswordFragment"
+        android:name="com.example.knews.ui.fragment.UpdateUserPasswordFragment"
+        android:label="UpdateUserPasswordFragment" >
+        <action
+            android:id="@+id/action_updateUserPasswordFragment_to_updateUserFragment2"
+            app:destination="@id/updateUserFragment2"
+            app:popUpTo="@id/updateUserPasswordFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_updateUserPasswordFragment_self"
+            app:destination="@id/updateUserPasswordFragment" />
+        <action
+            android:id="@+id/action_updateUserPasswordFragment_to_updateUserFragment22"
+            app:destination="@id/updateUserFragment2"
+            app:popUpTo="@id/updateUserPasswordFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

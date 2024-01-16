@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="400dp"-->
+    <!--        android:layout_height="490dp"-->
+    <!--        android:padding="16dp"-->
+    <!--        android:scaleType="fitCenter"-->
+    <!--        android:src="@drawable/curved_image_background" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="490dp"
+        android:padding="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background2" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnSignUpFirst"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="113dp"
+        android:background="@drawable/curved_edge"
+        android:letterSpacing="0.5"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:layout_width="290dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="19dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Get Latest and Updated New Easily with Us"
+        android:textAlignment="center"
+        android:textColor="#7E7979"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUpFirst"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvLoginFirst"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Already have an account? Login"
+        android:textColor="#0c356a"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUpFirst" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
